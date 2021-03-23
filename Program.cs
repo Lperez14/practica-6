@@ -1,42 +1,67 @@
 ﻿using System;
 
-namespace clases
+namespace practica_6
 {
-    //Crear tres clases ClaseA, ClaseB, ClaseC que ClaseB herede de ClaseA y ClaseC herede de ClaseB.Definir un constructor a cada clase que muestre un mensaje.Luego definir un objeto de la clase ClaseC.//
-
-  public class A
-    {
-        public A()
-        {
-            Console.WriteLine("Constructor de la clase A");
-        }
-    }
-
-    public class B : A
-    {
-        public B()
-        {
-            Console.WriteLine("Constructor de la clase B");
-        }
-    }
-
-    public class C : B
-    {
-        public C()
-        {
-            Console.WriteLine("Constructor de la clase C");
-        }
-    }
-
-    class Objeto
-    {
-        static void Main(string[] args)
-        {
-            C obj = new C();
-            Console.ReadKey();
-        }
-    }
-}
-        
     
+    
+        //Crear una clase Persona que tenga como atributos el "cedula, nombre, apellido y la edad (definir las propiedades para poder acceder a dichos atributos)". Definir como responsabilidad un método para mostrar ó imprimir.Crear una segunda clase Profesor que herede de la clase Persona.Añadir un atributo sueldo(y su propiedad) y el método para imprimir su sueldo.Definir un objeto de la clase Persona y llamar a sus métodos y propiedades.También crear un objeto de la clase Profesor y llamar a sus métodos y propiedades.//
+ 
+           class Persona
+            {
+                private string cedula;
+
+                private string nombre;
+
+                private string apellido;
+
+                private int edad;
+
+                public Persona()
+                {
+                    Console.Write("Ingrese su cedula: ");
+                    cedula = Console.ReadLine();
+                    Console.Write("Ingrese su nombre: ");
+                    nombre = Console.ReadLine();
+                    Console.Write("Ingrese su apellido: ");
+                    apellido = Console.ReadLine();
+                    Console.Write("Ingrese su edad: ");
+                    string Linea = Console.ReadLine();
+                    edad = int.Parse(Linea);
+                }
+
+                public void Imprimir()
+                {
+                    Console.WriteLine("Bienvenido " + nombre);
+                    Console.WriteLine("Cedula: " + cedula);
+                    Console.WriteLine("Nombre: " + nombre);
+                    Console.WriteLine("Apellido: " + apellido);
+                    Console.WriteLine("Edad: " + edad);
+                }
+
+                class Profesor
+                {
+                    private double Sueldo;
+
+                    public Profesor()
+                    {
+                        Sueldo = 75800;
+                    }
+
+                    public void Imprime()
+                    {
+                        Console.WriteLine("Su sueldo es: {0} ", Sueldo);
+                    }
+
+                }
+
+                static void Main(string[] args)
+                {
+                    Persona Persona01 = new Persona();
+                    Profesor Profesor01 = new Profesor();
+
+                    Persona01.Imprimir();
+                    Profesor01.Imprime();
+                }
+            }
+        }
 
